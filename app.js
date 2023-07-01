@@ -1,17 +1,21 @@
 var btn = document.querySelector(".no");
-var position
+var positionX, positionY;
+
 btn.addEventListener("click", function() {
-position ? (position = 0) : (position = 150);
-btn.style.transform = `translate(${position}px,0px)`;
-btn.style.transition = "all 0.2s ease";
+  positionX = getRandomPosition(-200, 200);
+  positionY = getRandomPosition(-200, 200);
+  btn.style.transform = `translate(${positionX}px, ${positionY}px)`;
+  btn.style.transition = "all 0.2s ease";
 });
 
-var btn = document.querySelector(".no");
-var position
 btn.addEventListener("mouseover", function() {
-position ? (position = 0) : (position = 150);
-btn.style.transform = `translate(${position}px,0px)`;
-btn.style.transition = "all 0.2s ease";
+  positionX = getRandomPosition(-200, 200);
+  positionY = getRandomPosition(-200, 200);
+  btn.style.transform = `translate(${positionX}px, ${positionY}px)`;
+  btn.style.transition = "all 0.2s ease";
 });
 
+function getRandomPosition(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
